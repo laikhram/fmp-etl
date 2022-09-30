@@ -1,25 +1,9 @@
 version: "3.7"
 services:
-  mongodb:
-    image: mongo
+  db:
+    image: mariadb
     ports:
-      - 27017:27017
-    # environment:
-    #   - MONGO_INITDB_ROOT_USERNAME=root
-    #   - MONGO_INITDB_ROOT_PASSWORD=123456
-    #   - MONGO_INITDB_DATABASE=example
-    #   - MONGO_INITDB_USERNAME=kajame
-    #   - MONGO_INITDB_PASSWORD=111111
-    # volumes:
-    #   - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
-    #   - ./db:/data/db
-
-  postgis:
-    image: postgis/postgis
-    # container_name: postgis
-    ports:
-      - '5432:5432'
+      - 3306:3306
     environment:
-      POSTGRES_PASSWORD: postgres
-    # volumes:
-    #   - pgdata:/var/lib/postgresql/data
+      MARIADB_ROOT_PASSWORD: example
+      TZ: Asia/Bangkok
